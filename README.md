@@ -1,26 +1,20 @@
 ## Intel xrandr Overscan Fix  
 
-A simple script to fix HDMI overscan issues on Intel GPUs using `xrandr`.  
-
-#### ⚠️ Important Note  
-The default values (`HDMI-1` and `1920x1080`) are specific to my system.  
-Before running the script, **modify them** to match your display setup.  
-Using incorrect values may cause display issues.  
+A simple script to fix HDMI overscan issues on Intel GPUs using `xrandr`.
 
 #### 📌 Why This Script?  
-Some external monitors and TVs introduce overscan when connected via HDMI to Intel GPUs, causing parts of the screen to be cut off.  
-This script adjusts the underscan settings to fix the issue.  
+Some external monitors and TVs introduce overscan when connected via HDMI to Intel GPUs, causing parts of the screen to be cut off. This script adjusts the underscan settings to fix the issue.
 
 #### 🛠️ Usage  
 
 ##### 1️⃣ Identify Your Display Name  
-Run the following command to list connected displays:  
+Run the following command to list connected displays:
 
 ```bash
 xrandr --listmonitors
 ```  
 
-Find the name of your HDMI output (e.g., `HDMI-1`, `HDMI-2`).  
+Find the name of your HDMI output (e.g., `HDMI-1`, `HDMI-2`).
 
 ##### 2️⃣ Check Available Resolutions  
 Run:  
@@ -29,18 +23,19 @@ Run:
 xrandr
 ```  
 
-This will show supported resolutions. Choose the correct one for your display.  
+This will show supported resolutions. Choose the correct one for your display.
 
-##### 3️⃣ Modify the Script  
-Edit the script and replace:  
-- `HDMI-1` with your actual display name.  
-- `1920x1080` with your desired resolution.  
-
-##### 4️⃣ Apply the Fix  
-Run the script:  
+##### 3️⃣ Run the Script  
+Make the script executable:  
 
 ```bash
-./xrandr_overscan_fix.sh
+chmod +x xrandr_overscan_fix.sh
+```  
+
+Then run the script with your display output and resolution as parameters:  
+
+```bash
+./xrandr_overscan_fix.sh HDMI-1 1920x1080
 ```  
 
 #### 🛠️ Troubleshooting  
